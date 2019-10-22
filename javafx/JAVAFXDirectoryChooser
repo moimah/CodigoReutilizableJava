@@ -1,0 +1,25 @@
+		/**
+		 * Metodo que abre un cuadro de dialogo , 		
+		 * explorador de windows
+		 * Devuelve un String con el fichero seleccionado		 * 
+		 * @return fichero
+		 */ 
+	    
+		public String buscarDirectorio() {
+
+			String fichero = "";
+			DirectoryChooser directoryChooser = new DirectoryChooser();
+			File selectedDirectory = directoryChooser.showDialog(null);
+
+			if (selectedDirectory != null) {
+				System.out.println("Se ha seleccionado fichero");
+				fichero = selectedDirectory.getPath().toString();
+				System.out.println(fichero);
+
+			} else {
+				System.out.println("No se ha seleccionado el fichero");
+			}
+
+			return fichero;
+
+		}
